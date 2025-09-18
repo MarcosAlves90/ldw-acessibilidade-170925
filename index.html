@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LDW - Acessibilidade</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper">
+      </div>
+    </div>
+  </div>
+
+  <main class="page">
+    <header class="hero">
+      <h1>LDW - Acessibilidade</h1>
+      <p class="lead">
+        Texto com link:
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">Abrir exemplo</a>
+      </p>
+
+      <div class="controls" role="group" aria-label="Controles de exemplo">
+        <button class="btn" type="button">Primário</button>
+        <a href="https://youtube.com" role="button" target="_blank" rel="noopener noreferrer">
+          <button class="btn btn-primary">
+            Botão com link
+          </button>
+        </a>
+      </div>
+    </header>
+
+    <section class="tools" aria-label="Ferramentas de acessibilidade">
+      <button class="btn btn-tool" id="btn-blackwhite" aria-label="Ativar modo preto e branco">
+        <img src="./public/icons/ico-pretobranco.png" alt="Ícone preto e branco">
+      </button>
+      <button class="btn btn-tool" id="btn-increase-font" aria-label="Aumentar fonte">
+        <img src="./public/icons/ico-amais.png" alt="Ícone aumentar fonte">
+      </button>
+      <button class="btn btn-tool" id="btn-decrease-font" aria-label="Diminuir fonte">
+        <img src="./public/icons/ico-amenos.png" alt="Ícone diminuir fonte">
+      </button>
+      <button class="btn btn-tool" id="btn-high-contrast" aria-label="Ativar alto contraste">
+        <img src="./public/icons/ico-altocontraste.png" alt="Ícone alto contraste">
+      </button>
+      <button class="btn btn-tool" id="btn-sign-language" aria-label="Ativar intérprete de Libras">
+        <img src="./public/icons/ico-libras.png" alt="Ícone intérprete de Libras">
+      </button>
+      <button class="btn btn-tool" id="btn-voice" aria-label="Ativar leitura por voz">
+        <img src="./public/icons/ico-voz.png" alt="Ícone leitura por voz">
+      </button>
+    </section>
+
+    <section class="gallery" aria-label="Galeria de imagens">
+      <figure class="card">
+        <img src="./public/fini-beijos.webp" alt="Balas Fini formato de beijos" title="Fini Beijos"
+          loading="lazy" />
+        <figcaption>Fini Beijos</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="./public/fini-minhocas.webp" alt="Balas Fini formato de minhocas coloridas" title="Fini Minhocas"
+          loading="lazy" />
+        <figcaption>Fini Minhocas</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="./public/fini-ovos.webp" alt="Balas Fini formato de ovos fritos"
+          title="Fini Ovos" loading="lazy" />
+        <figcaption>Fini Ovos</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="./public/fini-ursinhos.webp" alt="Balas Fini formato de ursinhos coloridos" title="Fini Ursinhos"
+          loading="lazy" />
+        <figcaption>Fini Ursinhos</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <!--V LIBRA-->
+  <script src="index.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+</html>

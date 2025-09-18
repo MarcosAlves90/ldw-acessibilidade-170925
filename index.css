@@ -1,0 +1,206 @@
+:root {
+    --bg: #e0e0e0;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #0ea5a4;
+    --accent-600: #0b8f86;
+    --radius: 8px;
+    --gap: 16px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color-scheme: light;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: black;
+    font-size: 16px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 32px;
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero {
+    background-color: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    margin-bottom: 22px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    h1 {
+        margin: 0 0 8px 0;
+        font-size: 1.25rem;
+        letter-spacing: -0.2px;
+    }
+}
+
+.lead {
+    margin: 0;
+    color: var(--muted);
+
+    a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px dotted rgba(14, 165, 164, 0.25);
+
+        &:hover {
+            color: var(--accent-600);
+            border-bottom-color: transparent
+        }
+    }
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    user-select: none;
+    background: var(--bg);
+
+    img {
+        width: 50px;
+        height: 50px;
+        aspect-ratio: 1 / 1;
+    }
+
+    &:active {
+        transform: translateY(1px)
+    }
+}
+
+.btn-tool {
+    background-color: var(--card);
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--card);
+
+    &:hover {
+        filter: brightness(1.03);
+    }
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    gap: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--gap);
+}
+
+.card {
+    background-color: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    transition: transform .16s ease;
+    cursor: pointer;
+    margin: 0;
+
+    &:hover {
+        transform: translateY(-6px);
+    }
+
+    img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        display: block;
+        background: #f0f2f5;
+    }
+
+    figcaption {
+        padding: 10px 12px;
+        font-size: 0.92rem;
+        color: var(--muted);
+    }
+}
+
+/* Classes de acessibilidade */
+
+.black-and-white {
+    filter: grayscale(100%);
+}
+
+.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+    --card: #000 !important;
+    --muted: #fff !important;
+    --accent: #ff0 !important;
+    --accent-600: #ffd700 !important;
+
+    a, .lead a {
+        color: #ff0 !important;
+        border-bottom-color: #ff0 !important;
+    }
+    figcaption {
+        color: #fff !important;
+    }
+    .btn-tool img,
+    .card img {
+        filter: invert(1) grayscale(100%) !important;
+    }
+    .btn {
+        background-color: #fff !important;
+        color: #000 !important;
+        border-color: #ff0 !important;
+        &.btn-tool {
+        background-color: #000 !important;
+    }
+    }
+    .btn-primary {
+        background-color: #ff0 !important;
+        color: #000 !important;
+    }
+    .card {
+        background-color: #000 !important;
+        color: #fff !important;
+        border: 2px solid #ff0 !important;
+    }
+}
